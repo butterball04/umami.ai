@@ -167,6 +167,7 @@
   padding: 1.5rem;
   color: #ECECF1;
   animation: fadein 0.5s;
+  flex-direction: column;
 }
 
 @keyframes fadein {
@@ -365,4 +366,22 @@
 
 .exampleMessage:hover {
   background-color: #e0e0e0;
+}
+
+.imageGallery {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.imageGallery img {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+.iconwithmessage {
+  display: flex;
+  flex-direction: row;
 }
