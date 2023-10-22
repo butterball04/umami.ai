@@ -83,15 +83,15 @@ export default function Home() {
     setExampleMessages(translate('exampleMessages', language))
   }
  }, [language, exampleMessages])
-//  const handleExampleMessageClick = (e: any) => {
-//   // Trigger handleSubmit with the clicked example message
-//   setUserInput(e.target.value)
-//   handleSubmit(e, restaurant)
 
-//   // Remove all example messages from the list
-//   setExampleMessages([]);
-//   setUserInteracted(true);
-// };
+ const handleExampleMessageClick = (e: any) => {
+  // Trigger handleSubmit with the clicked example message
+  setUserInput(e.target.value);
+
+  // Remove all example messages from the list
+  setExampleMessages([]);
+  setUserInteracted(true);
+};
  
 
   const [messageState, setMessageState] = useState<{ messages: Message[], pending?: string, history: [string, string][] }>({
@@ -279,7 +279,7 @@ export default function Home() {
                     key={message}
                     id="exampleMessage"
                     value={message}
-                    onClick={e => handleSubmit(e, restaurant)}
+                    onClick={e => handleExampleMessageClick(e)}
                     className={styles.exampleMessage}
                   >
                     {message}
